@@ -1,0 +1,22 @@
+<div class="row mt-5">
+    <div class="col-md-5 mx-auto mt-5">
+        <div class="card">
+            <div class="card-body">
+                <h1 class="text-center">Registrate</h1>
+                <form [formGroup]="loginForm" (ngSubmit)="onRegister()">
+                    <div class="form-group">
+                        <label >Correo</label>
+                        <input type="email" class="form-control" formControlName="email">
+                    </div>
+                    <div class="form-group">
+                        <label >Contraseña</label>
+                        <input type="password" class="form-control" formControlName="password">
+                    </div>
+                    <div>
+                        <button type="submit"class="btn btn-info btn-block mt-5">Registrar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

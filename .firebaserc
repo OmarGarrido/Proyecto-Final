@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "inventario-construccion": {
+      "hosting": {
+        "inventario": [
+          "inventario-construccion"
+        ]
+      }
+    }
+  }
+}
