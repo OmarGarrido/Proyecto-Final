@@ -1,4 +1,4 @@
-import { FileItem } from "./file-item";
+import { FileItem } from "../file-item";
 
 export class ImageValidator {
 

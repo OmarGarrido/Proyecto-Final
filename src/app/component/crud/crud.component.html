@@ -12,7 +12,7 @@
         <thead>
             <tr class="table-primary">
                 <th>Material</th>
-                <th>Marca</th>
+                <th>Descripcion</th>
                 <th>Cantidad</th>
                 <th>Precio</th>
                 <th>Operiaciones</th>
@@ -20,15 +20,14 @@
         </thead>
         <tbody>
             <tr class="table" *ngFor="let item of collection.data | paginate: config">
-                <td>{{item.material}}</td>
-                <td>{{item.marca}}</td>
-                <td>{{item.cantidad}}</td>
-                <td>{{item.precio}}</td>
+                <td style="text-transform: capitalize;"><img [src]="item.url" style="width: 50px;   margin-right: 1rem;">{{item.material}}</td>
+                <td style="text-transform: capitalize;">{{item.descripcion}}</td>
+                <td>{{item.cantidad}} pzs</td>
+                <td>${{item.precio}}</td>
                 <td>
                     <button type="button" class="btn btn-danger" (click)="eliminar(item)">Eliminar</button>
                     <button type="button" class="btn btn-primary" (click)="editarMaterial(content,item)">Editar</button>
                 </td>
-
             </tr>
         </tbody>
     </table>
@@ -52,8 +51,8 @@
                         </div>
 
                         <div class="form-group">
-                            <strong><label for="">Marca</label></strong>
-                            <input type="text" formControlName="marca" class="form-control">
+                            <strong><label for="">Descripcion</label></strong>
+                            <input type="text" formControlName="descripcion" class="form-control">
                         </div>
 
                         <div class="form-group">
@@ -66,19 +65,26 @@
                             <input type="text" formControlName="precio" class="form-control">
                         </div>
 
-                        <!-- <div class="form-goup">
+                        <div class="form-group">
+                            <input class="form-control" type="hidden" [value]="urlImage|async" formControlName="url">
                             <label><strong>Selecciona una imagen</strong></label>
-                            <input type="file" class="form-control-file" formControlName="imagen">
-                        </div> -->
+                            <input type="file" accept=".jpeg,.png,.jpg" (change)="onUpload($event)">
+                        </div>
+
+                        <div class="progress form-group">
+                            <div class="progress-bar progressbar-striped bg-success" role="progressbar"
+                                [style.width]="(uploadPercent|async)+'%'"></div>
+
+                        </div>
                     </form>
                 </div>
             </form>
         </div>
         <div class="modal-footer">
-            <button *ngIf="updSave==false" type="button" class="btn btn-outline-dark"
-                (click)="guardar()">Guardar</button>
-            <button *ngIf="updSave==true" type="button" class="btn btn-outline-dark"
-                (click)="actualizar()">Actualizar</button>
+            <button *ngIf="updSave==false && urlImage|async as url" type="button" class="btn btn-success"
+                (click)="guardar(url)">Guardar</button>
+            <button *ngIf="updSave==true && urlImage|async as url" type="button" class="btn btn-info"
+                (click)="actualizar(url)">Actualizar</button>
         </div>
     </ng-template>
 

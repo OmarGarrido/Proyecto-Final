@@ -22,7 +22,7 @@
         </ul>
         <ul class="navbar-nav" *ngIf="user$ | async as user;else login">
             <li class="nav-item" routerLinkActive="active">
-                <a class="nav-link" [routerLink]="['home']" (click)="onLogout()">Logout</a>
+                <a class="nav-link active" [routerLink]="['home']" (click)="onLogout()">Logout: ({{user?.email}})</a>
             </li>
         </ul>
 

@@ -1,5 +1,5 @@
 import { Directive, Input, Output, EventEmitter, HostListener } from '@angular/core';
-import { FileItem } from '../models/helper/file-item';
+import { FileItem } from '../models/file-item';
 import { ImageValidator } from '../models/helper/imageValidators';
 
 @Directive({

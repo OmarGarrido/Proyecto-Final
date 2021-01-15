@@ -22,7 +22,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { environment } from 'src/environments/environment';
 import { NavbarComponent } from './component/navbar/navbar.component';
-import { NgImagesFilesDirective } from './component/home/directives/ng-images-files.directive';
+import { NgImagesFilesDirective } from './Tutoria/directives/ng-images-files.directive';
+import { UploadImageComponent } from './Tutoria/uploadImage.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { NgImagesFilesDirective } from './component/home/directives/ng-images-fi
     LoginComponent,
     RegistroComponent,
     NavbarComponent,
-    NgImagesFilesDirective
+    NgImagesFilesDirective,
+    UploadImageComponent
   ],
   imports: [
     BrowserModule,
