@@ -85,7 +85,7 @@ export class CrudComponent implements OnInit {
       error => {
         console.error(error);
       }
-    );
+    );    
   }
 
   pageChanged(event) {

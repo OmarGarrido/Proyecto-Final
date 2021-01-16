@@ -3,6 +3,24 @@
         <div class="card">
             <div class="card-body">
                 <h1 class="text-center">Registrate</h1>
+                <!-- <form [formGrooup]="userForm" (ngSubmit)="opUpUser()">
+                    <div class="form-group">
+                        <label style="text-transform: capitalize;">nombre de usurio</label>
+                        <input type="email" class="form-control" formControlName="name">
+                    </div>
+                    <div class="form-group">
+                        <label style="text-transform: capitalize;">cumpleaños</label>
+                        <input type="email" class="form-control" formControlName="birth">
+                    </div>
+                    <div class="form-group">
+                        <label style="text-transform: capitalize;">telefono de contacto</label>
+                        <input type="email" class="form-control" formControlName="number">
+                    </div>
+                    <div class="form-group">
+                        <label style="text-transform: capitalize;">direccion</label>
+                        <input type="email" class="form-control" formControlName="address">
+                    </div>
+                </form> -->
                 <form [formGroup]="loginForm" (ngSubmit)="onRegister()">
                     <div class="form-group">
                         <label >Correo</label>

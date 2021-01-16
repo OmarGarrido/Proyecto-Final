@@ -8,16 +8,16 @@
             <!-- <li class="nav-item">
                 <a class="navbar-brand">Materiales de Construccion APASCO</a>
             </li> -->
-        
+
             <li class="nav-item" routerLinkActive="active">
                 <a class="nav-link" [routerLink]="['home']">Home</a>
             </li>
         </ul>
-            
+
 
         <ul class="navbar-nav mr-auto" *ngIf="user$|async as user;">
             <li class="nav-item" routerLinkActive="active">
-                <a class="nav-link" [routerLink]="['crud']" >CRUD</a>
+                <a class="nav-link" [routerLink]="['crud']">CRUD</a>
             </li>
         </ul>
         <ul class="navbar-nav" *ngIf="user$ | async as user;else login">
@@ -29,11 +29,12 @@
         <ng-template #login>
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item" routerLinkActive="active">
-                    <a class="nav-link" [routerLink]="['registro']">Registrate</a>
-                </li>
-                <li class="nav-item" routerLinkActive="active">
                     <a class="nav-link" [routerLink]="['login']">Login</a>
                 </li>
+                <li class="nav-item" routerLinkActive="active">
+                    <a class="nav-link" [routerLink]="['registro']">Registrate</a>
+                </li>
+
             </ul>
         </ng-template>
 

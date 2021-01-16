@@ -24,6 +24,7 @@ import { environment } from 'src/environments/environment';
 import { NavbarComponent } from './component/navbar/navbar.component';
 import { NgImagesFilesDirective } from './Tutoria/directives/ng-images-files.directive';
 import { UploadImageComponent } from './Tutoria/uploadImage.component';
+import { DetallesComponent } from './component/detalles/detalles.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { UploadImageComponent } from './Tutoria/uploadImage.component';
     RegistroComponent,
     NavbarComponent,
     NgImagesFilesDirective,
-    UploadImageComponent
+    UploadImageComponent,
+    DetallesComponent
   ],
   imports: [
     BrowserModule,
